@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using AirlinePlanner.Models;
+using System;
+using System.Collections.Generic;
 
 namespace AirlinePlanner.Controllers
 {
@@ -9,7 +11,8 @@ namespace AirlinePlanner.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      return View("Index", AirlinePlannerModel.GetString());
+      List<City> allCities = City.GetAll();
+      return View("Index", allCities);
     }
   }
 }

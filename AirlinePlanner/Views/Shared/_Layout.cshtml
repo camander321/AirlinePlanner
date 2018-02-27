@@ -10,7 +10,17 @@
   </head>
   <body>
     <div class="container">
-      <h1>This is in the layout</h1>
+      <h1>
+      @{
+        foreach(char c in "Epic-Air")
+        {
+          <span class="letter">@c</span>
+        }
+      }
+      </h1>
+
+
+      <h1>Epic-Air</h1>
         @RenderBody()
     </div>
   </body>
